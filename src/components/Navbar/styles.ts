@@ -37,7 +37,20 @@ export const Logo = styled.div`
   }
 `;
 
-export const NavbarMenu = styled.div`
-  width: 100%;
+export const NavbarMenu = styled.ul`
   list-style: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const MenuItem = styled.li`
+  padding: 0 10px;
+
+  a {
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--primary-yellow-orange);
+  }
 `;

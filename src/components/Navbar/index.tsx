@@ -1,4 +1,6 @@
-import { Nav, NavbarWrapper, Logo, NavbarMenu } from './styles';
+import { Link } from 'react-router-dom';
+
+import { Nav, NavbarWrapper, Logo, NavbarMenu, MenuItem } from './styles';
 
 import warehouse from '../../assets/images/warehouse.png';
 
@@ -12,7 +14,15 @@ export function Navbar() {
         </Logo>
 
         <NavbarMenu>
-
+          <MenuItem>
+            <Link to='/'>Inicio</Link>
+          </MenuItem>
+          <MenuItem>
+            <Link to='/recipes'>Receitas</Link>
+          </MenuItem>
+          <MenuItem>
+            <Link to='/help'>Ajuda</Link>
+          </MenuItem>
         </NavbarMenu>
       </NavbarWrapper>
     </Nav>
