@@ -19,6 +19,10 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  body {
+    color: var(--text);
+  }
+
   body, input, textarea, button {
     font-family: 'Inter', sans-serif;
     font-weight: 400;
