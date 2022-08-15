@@ -1,9 +1,13 @@
-import { useState } from 'react'
+import { useState } from 'react';
 
-function App() {
+import { AppRoutes } from './appRoutes';
+import { GlobalStyle } from './globalStyle';
+
+export function App() {
   return (
-    <h1>Hello world</h1>
+    <>
+      <GlobalStyle />
+      <AppRoutes />
+    </>
   )
 }
-
-export default App
