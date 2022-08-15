@@ -18,6 +18,7 @@ export const NavbarWrapper = styled.div`
   justify-content: space-between;
 
   margin: 0 auto;
+  padding: 0 20px;
 `;
 
 export const Logo = styled.div`
@@ -52,5 +53,15 @@ export const MenuItem = styled.li`
     font-weight: 600;
     text-decoration: none;
     color: var(--primary-yellow-orange);
+  }
+
+  transition: .2s;
+
+  &:hover {
+    transform: translateY(-10px);
+
+    a {
+      color: var(--primary-pumpkin);
+    }
   }
 `;
