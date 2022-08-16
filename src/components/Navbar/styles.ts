@@ -47,7 +47,7 @@ export const NavbarMenu = styled.ul`
 `;
 
 export const MenuItem = styled.li`
-  padding: 0 10px;
+  padding: 10px;
 
   a {
     font-weight: 600;
@@ -64,4 +64,10 @@ export const MenuItem = styled.li`
       color: var(--primary-pumpkin);
     }
   }
+`;
+
+export const Buttons = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
 `;

@@ -21,9 +21,19 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     color: var(--black);
+    background: var(--white);
+  }
+
+  input,
+  button,
+  textarea,
+  select {
+    outline: none;
+    border: none;
   }
 
   body, input, textarea, button {
+    font-size: 1.125rem;
     font-family: 'Inter', sans-serif;
     font-weight: 400;
   }
