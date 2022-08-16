@@ -14,4 +14,10 @@ export const ButtonWrapper = styled.button<ButtonProps>`
   
   padding: 0 20px;
   cursor: pointer;
+
+  &:hover {
+    ${(props) => !props.outlined && 'filter: brightness(90%)'}
+    color: ${(props) => props.outlined && 'var(--white)'};
+    background: ${(props) => props.outlined ? 'var(--primary-yellow-orange)' : 'var(--primary-pumpkin)'};
+  }
 `;
