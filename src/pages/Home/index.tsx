@@ -1,4 +1,4 @@
-import { Container, HomeHeaderContainer, HomeHeader, HeaderImage } from "./styles";
+import { Container, HomeHeaderContainer, HomeHeader, HeaderImage, FeaturedRecipes } from "./styles";
 
 import emoji from '../../assets/images/emoji-drool.gif';
 import food from '../../assets/images/food.png';
@@ -18,6 +18,12 @@ export function Home() {
           </HeaderImage>
         </HomeHeader>
       </HomeHeaderContainer>
+      <FeaturedRecipes>
+        <h1>Em destaque</h1>
+        {
+
+        }
+      </FeaturedRecipes>
     </Container>
   );
 }

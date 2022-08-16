@@ -54,3 +54,15 @@ export const HeaderImage = styled.div`
     transform: rotate(-3deg);
   }
 `;
+
+export const FeaturedRecipes = styled.div`
+  width: 100%;
+  max-width: 1300px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin: 0 auto;
+  padding: 20px;
+`;
