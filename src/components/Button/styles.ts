@@ -4,16 +4,14 @@ interface ButtonProps {
   outlined?: boolean;
 }
 
-export const ButtonWrapper = styled.div`
-  button {
-    height: 40px;
+export const ButtonWrapper = styled.button<ButtonProps>`
+  height: 40px;
 
-    color: ${(props: ButtonProps) => props.outlined ? 'var(--primary-yellow-orange)' : 'var(--white)'};
-    background: ${(props: ButtonProps) => props.outlined ? 'var(--white)' : 'var(--primary-yellow-orange)'};
-    border: 1px solid ${(props: ButtonProps) => props.outlined ? 'var(--primary-yellow-orange)' : 'none'};
-    border-radius: 5px;
-    
-    padding: 0 20px;
-    cursor: pointer;
-  }
+  color: ${(props) => props.outlined ? 'var(--primary-yellow-orange)' : 'var(--white)'};
+  background: ${(props) => props.outlined ? 'var(--white)' : 'var(--primary-yellow-orange)'};
+  border: 1px solid ${(props) => props.outlined ? 'var(--primary-yellow-orange)' : 'none'};
+  border-radius: 5px;
+  
+  padding: 0 20px;
+  cursor: pointer;
 `;

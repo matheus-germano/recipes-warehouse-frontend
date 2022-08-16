@@ -1,18 +1,16 @@
 import { ButtonHTMLAttributes } from 'react';
 import { ButtonWrapper } from './styles';
 
-interface ButtonProps extends React.ComponentProps<"button"> {
-  text: string;
+interface ButtonProps {
   outlined?: boolean;
-  children?: React.ReactNode;
+  children: React.ReactNode;
+  [x: string]: any;
 }
 
-export function Button({ text, outlined, children, ...buttonProps }: ButtonProps) {
+export function Button({ children, outlined, ...props }: ButtonProps) {
   return (
-    <ButtonWrapper outlined={outlined}>
-      <button {...buttonProps}>
-        {text}
-      </button>
+    <ButtonWrapper {...props} outlined={outlined}>
+      {children}
     </ButtonWrapper>
   );
 }

@@ -28,8 +28,8 @@ export function Navbar() {
         </NavbarMenu>
 
         <Buttons>
-          <Button text="Entrar" />
-          <Button text="Cadastrar" outlined={true} />
+          <Button onClick={() => console.log('teste')}>Entrar</Button>
+          <Button outlined={true} onMouseEnter={() => console.log('teste 2')}>Cadastre-se</Button>
         </Buttons>
       </NavbarWrapper>
     </Nav>
