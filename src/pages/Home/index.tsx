@@ -23,7 +23,7 @@ interface RecipeProps {
 }
 
 export function Home() {
-  const { data: recipes } = useFetch('recipes', 'https://localhost:7264/v1/recipes');
+  const { data: recipes } = useFetch('recipes', '/v1/recipes');
 
   return (
     <Container>
