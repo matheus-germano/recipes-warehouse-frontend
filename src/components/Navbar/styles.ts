@@ -1,12 +1,27 @@
 import styled from 'styled-components';
 
-export const Nav = styled.nav`
+interface NavProps {
+  isPageScrolled: boolean;
+}
+
+export const Nav = styled.nav<NavProps>`
   width: 100%;
   height: 90px;
 
   display: flex;
   align-items: center;
   justify-content: center;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  transition: .3s;
+  overflow: hidden;
+
+  outline: ${props => props.isPageScrolled ? '1px solid var(--grey)' : '1px solid transparent'};
+  backdrop-filter: ${props => props.isPageScrolled ? 'blur(4px)' : 'none'};
+  background: ${props => props.isPageScrolled ? 'rgba(0, 0, 0, 0.05)' : 'none'};
 `;
 
 export const NavbarWrapper = styled.div`
@@ -26,6 +41,8 @@ export const Logo = styled.div`
   align-items: center;
   justify-content: center;
   gap: 10px;
+
+  cursor: pointer;
 
   img {
     height: 39px;

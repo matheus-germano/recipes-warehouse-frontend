@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { Button } from '../Button';
 
@@ -7,10 +8,20 @@ import { Nav, NavbarWrapper, Logo, NavbarMenu, MenuItem, Buttons } from './style
 import warehouse from '../../assets/images/warehouse.png';
 
 export function Navbar() {
+  const navigate = useNavigate();
+
+  const [isPageScrolled, setIsPageScrolled] = useState(false);
+
+  function checkIsPageScrolled() {
+    window.scrollY >= 90 ? setIsPageScrolled(true) : setIsPageScrolled(false);
+  }
+
+  window.addEventListener('scroll', checkIsPageScrolled);
+
   return (
-    <Nav>
+    <Nav isPageScrolled={isPageScrolled}>
       <NavbarWrapper>
-        <Logo>
+        <Logo onClick={() => navigate('/')}>
           <h1>RECIPES</h1>
           <img src={warehouse} alt="Recipes Warehouse" />
         </Logo>
@@ -28,8 +39,8 @@ export function Navbar() {
         </NavbarMenu>
 
         <Buttons>
-          <Button>Entrar</Button>
-          <Button outlined={true}>Cadastre-se</Button>
+          <Button onClick={() => navigate('/sign-in')}>Entrar</Button>
+          <Button outlined={true} onClick={() => navigate('/sign-up')}>Cadastre-se</Button>
         </Buttons>
       </NavbarWrapper>
     </Nav>
