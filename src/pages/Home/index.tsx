@@ -1,11 +1,29 @@
 import { SignIn } from "../SignIn";
+import { Recipe } from "../../components/Recipe";
 
-import { Container, HomeHeaderContainer, HomeHeader, HeaderImage, FeaturedRecipes } from "./styles";
+import { useFetch } from "../../hooks/useFetch";
+
+import { Container, HomeHeaderContainer, HomeHeader, HeaderImage, FeaturedRecipes, RecipesWrapper } from "./styles";
 
 import emoji from '../../assets/images/emoji-drool.gif';
 import food from '../../assets/images/food.png';
 
+interface RecipeProps {
+  id: number;
+  name: string;
+  type: number;
+  description: string;
+  image: string;
+  preparationMethod: string;
+  likes: number;
+  createdBy: string;
+  isRecipeOwner: boolean;
+  createdAt: Date;
+}
+
 export function Home() {
+  const { data: recipes } = useFetch('recipes', 'https://localhost:7264/v1/recipes');
+
   return (
     <Container>
       <HomeHeaderContainer>
@@ -22,9 +40,13 @@ export function Home() {
       </HomeHeaderContainer>
       <FeaturedRecipes>
         <h1>Em destaque</h1>
-        {
-
-        }
+        <RecipesWrapper>
+          {
+            recipes && recipes.data ? recipes.data.map((recipe: RecipeProps) => (
+              <Recipe key={recipe.id} recipe={recipe} />
+            )) : <p>Sem destaques no momento</p>
+          }
+        </RecipesWrapper>
       </FeaturedRecipes>
       <SignIn />
     </Container>

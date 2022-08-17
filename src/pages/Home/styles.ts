@@ -60,9 +60,17 @@ export const FeaturedRecipes = styled.div`
   max-width: 1300px;
 
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
 
   margin: 0 auto;
   padding: 20px;
+`;
+
+export const RecipesWrapper = styled.div`
+  width: 100%;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 `;
