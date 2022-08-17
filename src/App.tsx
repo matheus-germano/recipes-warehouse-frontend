@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Toaster } from 'react-hot-toast';
 
 import { AppRoutes } from './appRoutes';
 
@@ -8,6 +9,7 @@ import { GlobalStyle } from './globalStyle';
 export function App() {
   return (
     <>
+      <div><Toaster /></div>
       <GlobalStyle />
       <AppRoutes />
     </>

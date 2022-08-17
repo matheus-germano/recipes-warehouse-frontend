@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 import { Input } from '../../components/Input';
 import { Button } from '../../components/Button';
@@ -6,8 +8,49 @@ import { Button } from '../../components/Button';
 import { SignInContainer, Form, FormControl } from './styles';
 
 import donut from '../../assets/images/donut.svg';
+import axios from 'axios';
 
 export function SignIn() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+
+  function signInUser(e: any) {
+    e.preventDefault();
+
+    if (email.trim() === '' || password.trim() === '') {
+      toast.error('Preencha os campos corretamente');
+      return;
+    }
+
+    setIsLoading(true);
+
+    var data = JSON.stringify({
+      "email": email,
+      "password": password
+    });
+
+    var config = {
+      method: 'post',
+      url: 'https://localhost:7264/v1/signIn',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      data: data
+    };
+
+    axios(config)
+      .then((response) => {
+        toast.success('Entrou com sucesso');
+        setEmail('');
+        setPassword('');
+      })
+      .catch((error) => {
+        toast.error(error.response.data);
+      })
+      .finally(() => setIsLoading(false));
+  }
+
   return (
     <SignInContainer>
       <aside>
@@ -23,14 +66,24 @@ export function SignIn() {
           </div>
           <FormControl>
             <label htmlFor=''>E-mail</label>
-            <Input type='text' placeholder='Seu e-mail' />
+            <Input
+              type='text'
+              placeholder='Seu e-mail'
+              value={email}
+              onChange={(e: any) => setEmail(e.target.value)}
+            />
           </FormControl>
           <FormControl>
             <label htmlFor=''>Senha</label>
-            <Input type='password' placeholder='Sua senha' />
+            <Input
+              type='password'
+              placeholder='Sua senha'
+              value={password}
+              onChange={(e: any) => setPassword(e.target.value)}
+            />
             <Link to='/reset-password'>Esqueci minha senha</Link>
           </FormControl>
-          <Button>Entrar</Button>
+          <Button onClick={signInUser}>{isLoading ? 'Entrando...' : 'Entrar'}</Button>
           <hr />
           <p>Esqueceu sua senha? <Link to='/sign-up'>Cadastre-se</Link></p>
         </Form>
