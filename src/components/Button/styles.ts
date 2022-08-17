@@ -8,7 +8,7 @@ export const ButtonWrapper = styled.button<ButtonProps>`
   height: 40px;
 
   color: ${(props) => props.outlined ? 'var(--primary-yellow-orange)' : 'var(--white)'};
-  background: ${(props) => props.outlined ? 'var(--white)' : 'var(--primary-yellow-orange)'};
+  background: ${(props) => props.outlined ? 'transparent' : 'var(--primary-yellow-orange)'};
   border: 1px solid ${(props) => props.outlined ? 'var(--primary-yellow-orange)' : 'none'};
   border-radius: 5px;
   
