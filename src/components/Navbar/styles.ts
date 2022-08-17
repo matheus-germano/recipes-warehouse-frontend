@@ -65,6 +65,7 @@ export const NavbarMenu = styled.ul`
 
 export const MenuItem = styled.li`
   padding: 10px;
+  cursor: pointer;
 
   a {
     font-weight: 600;
