@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const RecipePreview = styled.div`
-  width: 250px;
+  flex: 1;
   height: 250px;
 
   border-radius: 5px;
@@ -56,7 +56,6 @@ export const RecipePreviewBody = styled.div`
 
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 10px;
 
   p {

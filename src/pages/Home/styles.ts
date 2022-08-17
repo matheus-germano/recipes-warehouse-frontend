@@ -75,3 +75,17 @@ export const RecipesWrapper = styled.div`
   flex-wrap: wrap;
   gap: 20px;
 `;
+
+export const NoFeaturedRecipes = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  margin: 0 auto;
+
+  img {
+    height: 128px;
+  }
+`;

@@ -3,9 +3,10 @@ import { Recipe } from "../../components/Recipe";
 
 import { useFetch } from "../../hooks/useFetch";
 
-import { Container, HomeHeaderContainer, HomeHeader, HeaderImage, FeaturedRecipes, RecipesWrapper } from "./styles";
+import { Container, HomeHeaderContainer, HomeHeader, HeaderImage, FeaturedRecipes, RecipesWrapper, NoFeaturedRecipes } from "./styles";
 
-import emoji from '../../assets/images/emoji-drool.gif';
+import drool from '../../assets/images/emoji-drool.gif';
+import crying from '../../assets/images/crying-emoji.gif';
 import food from '../../assets/images/food.png';
 
 interface RecipeProps {
@@ -30,7 +31,7 @@ export function Home() {
         <HomeHeader>
           <h1>
             Encontre ou crie <span>receitas deliciosas</span> que atendam a sua vontade
-            <img src={emoji} alt="" />
+            <img src={drool} alt="" />
           </h1>
           <HeaderImage>
             <div />
@@ -44,7 +45,12 @@ export function Home() {
           {
             recipes && recipes.data ? recipes.data.map((recipe: RecipeProps) => (
               <Recipe key={recipe.id} recipe={recipe} />
-            )) : <p>Sem destaques no momento</p>
+            )) : (
+              <NoFeaturedRecipes>
+                <img src={crying} alt="" />
+                <p>Sem destaques no momento</p>
+              </NoFeaturedRecipes>
+            )
           }
         </RecipesWrapper>
       </FeaturedRecipes>

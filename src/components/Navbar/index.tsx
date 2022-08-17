@@ -5,7 +5,7 @@ import { Button } from '../Button';
 
 import { Nav, NavbarWrapper, Logo, NavbarMenu, MenuItem, Buttons } from './styles';
 
-import warehouse from '../../assets/images/warehouse.png';
+import diet from '../../assets/images/diet.png';
 
 export function Navbar() {
   const navigate = useNavigate();
@@ -23,7 +23,7 @@ export function Navbar() {
       <NavbarWrapper>
         <Logo onClick={() => navigate('/')}>
           <h1>RECIPES</h1>
-          <img src={warehouse} alt="Recipes Warehouse" />
+          <img src={diet} alt="Recipes Warehouse" />
         </Logo>
 
         <NavbarMenu>
