@@ -9,7 +9,7 @@ export const Container = styled.div`
 
 export const HomeHeaderContainer = styled.div`
   width: 100%;
-  height: 500px;
+  height: 100vh;
 
   display: flex;
   align-items: center;

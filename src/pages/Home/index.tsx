@@ -1,3 +1,5 @@
+import { SignIn } from "../SignIn";
+
 import { Container, HomeHeaderContainer, HomeHeader, HeaderImage, FeaturedRecipes } from "./styles";
 
 import emoji from '../../assets/images/emoji-drool.gif';
@@ -24,6 +26,7 @@ export function Home() {
 
         }
       </FeaturedRecipes>
+      <SignIn />
     </Container>
   );
 }
