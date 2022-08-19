@@ -41,10 +41,17 @@ export const Likes = styled.div`
   justify-content: center;
   gap: 10px;
 
+  transition: .2s;
+
+  &:hover {
+    color: #de5246;
+  }
+
   p {
     text-align: center;
     font-size: 0.875rem;
   }
+
   svg {
     cursor: pointer;
     align-self: center;

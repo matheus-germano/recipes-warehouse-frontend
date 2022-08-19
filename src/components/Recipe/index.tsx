@@ -30,6 +30,14 @@ const recipeTypes = [
     type: 1,
     text: 'Massas'
   },
+  {
+    type: 2,
+    text: 'Bebidas'
+  },
+  {
+    type: 3,
+    text: 'Salgados'
+  },
 ];
 
 export function Recipe({ recipe }: RecipeCardProps) {
