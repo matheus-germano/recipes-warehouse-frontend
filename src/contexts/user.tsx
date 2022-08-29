@@ -1,7 +1,5 @@
 import { useState, useEffect, createContext } from 'react';
 
-export const UserContext = createContext({});
-
 interface UserContextProps {
   children: React.ReactNode
 }
@@ -12,6 +10,16 @@ interface UserProps {
   email: string;
   image: string;
 }
+
+interface UserCreateContextProps {
+  user: UserProps | null;
+  setUser: (user: UserProps | null) => void;
+}
+
+export const UserContext = createContext<UserCreateContextProps>({
+  user: null,
+  setUser: (user: UserProps | null) => { }
+});
 
 export function UserContextProvider({ children }: UserContextProps) {
   const [user, setUser] = useState<UserProps | null>(() => {

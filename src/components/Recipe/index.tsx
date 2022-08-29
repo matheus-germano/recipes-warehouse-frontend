@@ -15,6 +15,7 @@ interface RecipeProps {
   createdBy: string;
   isRecipeOwner: boolean;
   createdAt: Date;
+  likedByUser: boolean;
 }
 
 interface RecipeCardProps {
@@ -40,6 +41,10 @@ const recipeTypes = [
   },
 ];
 
+function handleRecipeLike() {
+
+}
+
 export function Recipe({ recipe }: RecipeCardProps) {
   return (
     <RecipePreview>
@@ -51,14 +56,6 @@ export function Recipe({ recipe }: RecipeCardProps) {
             <p>{recipe.likes}</p>
           </Likes>
         </RecipePreviewHeaderTexts>
-        {/* <img
-          src={'data:image/jpeg;base64,' + recipe.image}
-          alt=""
-          onError={({ currentTarget }) => {
-            currentTarget.onerror = null;
-            currentTarget.src = `${recipesPattern}`;
-          }}
-        /> */}
       </RecipePreviewHeader>
       <RecipePreviewBody>
         <RecipeInfos>

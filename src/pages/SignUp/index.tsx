@@ -73,7 +73,6 @@ export function SignUp() {
     reader.readAsDataURL(file);
     reader.onload = () => {
       setImage(reader.result);
-      console.log(reader.result);
     }
   }
 
