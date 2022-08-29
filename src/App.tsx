@@ -4,6 +4,7 @@ import { Toaster } from 'react-hot-toast';
 import { AppRoutes } from './appRoutes';
 
 import { Navbar } from './components/Navbar';
+import { UserContextProvider } from './contexts/user';
 import { GlobalStyle } from './globalStyle';
 
 export function App() {
@@ -11,7 +12,9 @@ export function App() {
     <>
       <div><Toaster /></div>
       <GlobalStyle />
-      <AppRoutes />
+      <UserContextProvider>
+        <AppRoutes />
+      </UserContextProvider>
     </>
   )
 }

@@ -61,4 +61,8 @@ export const FormControl = styled.div`
   label {
     font-weight: 700;
   }
+
+  small {
+    font-size: 0.75rem;
+  }
 `;

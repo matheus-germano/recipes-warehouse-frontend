@@ -27,7 +27,7 @@ export function SignIn() {
 
     var data = JSON.stringify({
       "email": email,
-      "password": password
+      "password": btoa(password)
     });
 
     var config = {
@@ -41,9 +41,15 @@ export function SignIn() {
 
     axios(config)
       .then((response) => {
-        toast.success('Entrou com sucesso');
         setEmail('');
         setPassword('');
+
+        localStorage.setItem('user', JSON.stringify({
+          id: response.data.id,
+          name: response.data.name,
+          email: response.data.email,
+          image: response.data.image
+        }));
       })
       .catch((error) => {
         toast.error(error.response.data);
@@ -85,7 +91,7 @@ export function SignIn() {
           </FormControl>
           <Button onClick={signInUser}>{isLoading ? 'Entrando...' : 'Entrar'}</Button>
           <hr />
-          <p>Esqueceu sua senha? <Link to='/sign-up'>Cadastre-se</Link></p>
+          <p>Nao tem uma conta? <Link to='/sign-up'>Cadastre-se</Link></p>
         </Form>
       </main>
     </SignInContainer>
